@@ -2,28 +2,27 @@ var Router = require('spa-quick-router')
 
 var router = new Router([
   {
-    route: /\/about/,
+    route: /^\/about/,
     title: 'About Us',
     element: '#about'
   },
   {
-    route: /\/shop/,
+    route: /^\/shop/,
     title: 'SG50 Shop',
     element: '#products'
   },
   {
-    route: /\/shop\/(.+)/,
+    route: /^\/shop\/(.+)/,
     title: 'SG50 Product Details',
     element: '#details'
   },
   {
-    route: /\//,
+    route: /^\/$/,
     title: 'Homepage',
     element: '#landing'
   },
-  {
-    // route: new RegExp(''),
-    route: /^$/,
-    element: '#error404'
-  }
+  // {
+  //   route: /^\/.+$/,
+  //   element: '#error404'
+  // }
 ])

@@ -22,8 +22,7 @@ var router = new Router([
     element: '#landing'
   },
   {
-    // route: new RegExp(''),
-    route: /^$/,
+    route: /^\/.+$/,
     element: '#error404'
   }
 ])

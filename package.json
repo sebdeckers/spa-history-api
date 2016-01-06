@@ -13,7 +13,7 @@
   },
   "devDependencies": {},
   "scripts": {
-    "build-js": "mkdir -p && browserify app.js --outfile dist/app.js",
+    "build-js": "mkdir -p dist && browserify app.js --outfile dist/app.js",
     "watch-js": "watchify app.js --outfile dist/app.js -v",
     "start": "npm run watch-js & nodemon server.js"
   },

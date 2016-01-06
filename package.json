@@ -11,10 +11,16 @@
     "spa-quick-router": "^2.0.0",
     "watchify": "^3.6.1"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "babel-eslint": "^4.1.6",
+    "babel-preset-es2015": "^6.3.13",
+    "babel-preset-stage-0": "^6.3.13",
+    "babelify": "^7.2.0",
+    "standard": "^5.4.1"
+  },
   "scripts": {
-    "build-js": "mkdir -p dist && browserify app.js --outfile dist/app.js",
-    "watch-js": "watchify app.js --outfile dist/app.js -v",
+    "build-js": "mkdir -p dist && browserify -t babelify app.js --outfile dist/app.js",
+    "watch-js": "watchify -t babelify app.js --outfile dist/app.js -v -d",
     "start": "npm run watch-js & nodemon server.js"
   },
   "repository": {
@@ -26,5 +32,8 @@
   "bugs": {
     "url": "https://github.com/cbas/spa-history-api/issues"
   },
-  "homepage": "https://github.com/cbas/spa-history-api#readme"
+  "homepage": "https://github.com/cbas/spa-history-api#readme",
+  "standard": {
+    "parser": "babel-eslint"
+  }
 }

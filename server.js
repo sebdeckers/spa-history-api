@@ -7,4 +7,6 @@ app.use(express.static(root))
 app.get('*', function (req, res) {
   res.sendFile(__dirname + '/index.html')
 })
+
+console.log('server started at port 8080')
 app.listen(8080)

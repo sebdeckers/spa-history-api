@@ -8,12 +8,14 @@
     "express": "^4.13.3",
     "express-history-api-fallback": "^2.0.0",
     "nodemon": "^1.8.1",
-    "spa-quick-router": "^1.1.1"
+    "spa-quick-router": "^1.1.1",
+    "watchify": "^3.6.1"
   },
   "devDependencies": {},
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "mkdir -p dist && browserify app.js --outfile dist/app.js && nodemon server.js"
+    "build-js": "mkdir -p && browserify app.js --outfile dist/app.js",
+    "watch-js": "watchify app.js --outfile dist/app.js -v",
+    "start": "npm run watch-js & nodemon server.js"
   },
   "repository": {
     "type": "git",
